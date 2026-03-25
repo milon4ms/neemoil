@@ -31,25 +31,35 @@
         </div>
     </div>
 
-    <section class="hero-section py-20">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+    <section class="hero-section py-12 md:py-20 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12">
                 
-                <div class="w-full md:w-1/4 flex justify-center">
-                    <img src="xyz.jpg" alt="Left Feature" class="w-full max-w-[250px] rounded-lg shadow-md">
+                <div class="w-full md:w-1/4 order-2 md:order-1 flex justify-center md:justify-end">
+                    <img src="left-image.jpg" alt="Left Product" 
+                         class="w-4/5 md:w-full max-w-[320px] h-auto rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300">
                 </div>
 
-                <div class="w-full md:w-2/4 text-center">
-                    <p class="text-[#3d7c3d] tracking-widest uppercase font-semibold mb-4 text-xs">Welcome to Nirvik Naturals</p>
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-                        চুলকানির যম <br><span class="text-[#3d7c3d]">নিম তেল</span>
+                <div class="w-full md:w-2/5 order-1 md:order-2 text-center z-10">
+                    <p class="text-[#3d7c3d] tracking-widest uppercase font-bold mb-3 text-xs md:text-sm">Welcome to Nirvik Naturals</p>
+                    
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                        চুলকানির যম <br>
+                        <span class="text-[#3d7c3d]">নিম তেল</span>
                     </h1>
-                    <p class="text-lg text-gray-600 mb-8">চুলকানি ও চর্মরোগের স্থায়ী সমাধান। </p>
-                    <a href="#order" class="btn-green px-10 py-4 font-bold text-lg shadow-2xl inline-block">অর্ডার করুন</a>
+                    
+                    <p class="text-base md:text-lg text-gray-600 mb-8 font-medium">
+                        চুলকানি ও চর্মরোগের স্থায়ী সমাধান। নিমের শক্তিশালী প্রাকৃতিক শক্তিতে আপনার ত্বক থাকুক সুরক্ষিত।
+                    </p>
+                    
+                    <a href="#order" class="btn-green px-10 py-4 font-bold text-xl shadow-xl inline-block hover:shadow-2xl">
+                        অর্ডার করুন
+                    </a>
                 </div>
 
-                <div class="w-full md:w-1/4 flex justify-center">
-                    <img src="abc.jpg" alt="Right Feature" class="w-full max-w-[250px] rounded-lg shadow-md">
+                <div class="w-full md:w-1/4 order-3 flex justify-center md:justify-start">
+                    <img src="right-image.jpg" alt="Right Product" 
+                         class="w-4/5 md:w-full max-w-[320px] h-auto rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300">
                 </div>
 
             </div>
@@ -72,7 +82,7 @@
                             <span class="w-4 h-4 bg-green-700 rounded-full"></span>
                             সমাধান নিমতেলে!!
                         </span>
-                        <span class="text-sm md:text-base italic font-medium leading-snug">
+                        <span class="text-xs md:text-sm italic font-medium leading-snug">
                             নিয়মিত ব্যবহারে চুলকানি ও খোসপাচড়া চিরতরে দূর হবে ইনশাআল্লাহ।
                         </span>
                     </li>
@@ -183,7 +193,7 @@
     <script>
     const BOT_TOKEN = '8575434705:AAHtEGHvWGcmhD6AkbshhzTD1wpVwXasksM';
     const CHAT_ID = '2007567611';
-    const GOOGLE_SHEET_URL = 'আপনার_গুগল_শিট_লিঙ্ক_এখানে_দিন';
+    const GOOGLE_SHEET_URL = 'YOUR_SHEET_URL_HERE';
 
     function toBengali(n) {
         const symbols = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
@@ -222,11 +232,6 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ chat_id: CHAT_ID, text: tgMessage, parse_mode: 'Markdown' })
             });
-
-            if(GOOGLE_SHEET_URL !== 'আপনার_গুগল_শিট_লিঙ্ক_এখানে_দিন') {
-                fetch(GOOGLE_SHEET_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(orderData) });
-            }
-
             window.location.href = "thank-you.html";
         } catch (err) {
             alert("সমস্যা হয়েছে, আবার চেষ্টা করুন।");
