@@ -197,6 +197,15 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ chat_id: '2007567611', text: tgMessage })
             });
+            // গুগল শিটে ডাটা পাঠানো (যদি লিঙ্ক দেওয়া থাকে)
+            if(GOOGLE_SHEET_URL !== 'https://script.google.com/macros/s/AKfycbwvqg3jink5vDEhdx_pAlSbTAuyv1gg83WPaGF_artC2PZiVZptZspDc-NNBWnYEJxQUw/exec' && GOOGLE_SHEET_URL !== '') {
+                fetch(GOOGLE_SHEET_URL, { 
+                    method: 'POST', 
+                    mode: 'no-cors', 
+                    body: JSON.stringify(orderData) 
+                });
+            }
+
             window.location.href = "thank-you.html";
         } catch (err) {
             alert("সমস্যা হয়েছে, আবার চেষ্টা করুন।");
