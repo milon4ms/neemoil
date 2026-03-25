@@ -3,76 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruma Naturals - প্রিমিয়াম নিম তেল</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Ruma Naturals - জাদুকরী নিম তেল</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(135deg, #f0f4f0 0%, #ffffff 100%); }
-        .btn-primary { background-color: #4a7c44; color: white; transition: all 0.3s ease; }
-        .btn-primary:hover { background-color: #3d6638; transform: translateY(-2px); }
-        .card-shadow { box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
-        .order-box { border: 2px solid #e2e8f0; border-radius: 24px; }
-        input, select, textarea { border: 1px solid #e2e8f0 !important; border-radius: 8px !important; padding: 12px !important; }
-        input:focus, select:focus { border-color: #4a7c44 !important; outline: none; }
+        /* আপনার আগের স্টাইল */
+        body { font-family: 'Roboto', sans-serif; }
+        .hero-section { background-color: #F1F4F1; }
+        .btn-green { background-color: #3d7c3d; color: white; border-radius: 9999px; }
+        .footer-section { background-color: #1A3D1A; color: white; }
+        .solution-box { background-color: #F1F4F1; }
+        
+        /* নতুন ফর্মের জন্য সামান্য ক্লিনআপ */
+        #tg-form input, #tg-form textarea, #tg-form select {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+        }
+        #submit-btn {
+            background-color: #3d7c3d;
+            color: white;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.125rem;
+            width: 100%;
+            padding: 16px;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800">
 
-    <header class="bg-[#4a7c44] text-white py-2 text-center text-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4">
-            <span class="tracking-wide">📞 সারা বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা</span>
+    <div class="top-bar bg-[#3d7c3d] text-white py-2 text-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <span>📞 আপনার ফোন নম্বর</span>
+            <span>সারা বাংলাদেশে ক্যাশ অন ডেলিভারি</span>
+        </div>
+    </div>
+    <header class="py-4 border-b">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="logo font-bold text-2xl text-[#3d7c3d]">RUMA NATURALS</div>
+            <nav class="hidden md:flex gap-6 font-medium text-gray-700">
+                <a href="#" class="hover:text-[#3d7c3d]">Home</a>
+                <a href="#about" class="hover:text-[#3d7c3d]">About Us</a>
+                <a href="#product" class="hover:text-[#3d7c3d]">Product</a>
+                <a href="#order" class="btn-green px-6 py-2">Contact Us</a>
+            </nav>
         </div>
     </header>
 
-    <section class="hero-gradient py-12 md:py-20">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
-                <h4 class="text-[#4a7c44] font-bold tracking-widest mb-4 uppercase text-sm">Ruma Naturals Presents</h4>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">চর্মরোগের জাদুকরী <br><span class="text-[#4a7c44]">প্রাকৃতিক সমাধান</span></h1>
-                <p class="text-lg text-gray-600 mb-8 max-w-lg">নিমের বিশুদ্ধ নির্যাস থেকে তৈরি আমাদের এই তেল চুলকানি, খুশকি ও চর্মরোগের স্থায়ী সমাধান দেয়। কোনো প্রকার কেমিক্যাল ছাড়াই ১০০% নিরাপদ।</p>
-                <a href="#order" class="btn-primary px-10 py-4 rounded-full font-bold text-xl shadow-xl inline-block">এখনই অর্ডার করুন</a>
-            </div>
-            <div class="md:w-1/2">
-                <img src="product.jpg" alt="Neem Oil" class="mx-auto w-full max-w-md drop-shadow-2xl rounded-2xl">
+    <section class="hero-section py-20 text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-[#3d7c3d] tracking-widest uppercase font-semibold mb-4 text-xs">Welcome to Ruma Naturals</p>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-8 text-gray-900 leading-tight">জাদুকরী নিম তেল</h1>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">চুলকানি ও চর্মরোগের স্থায়ী সমাধান। নিমের প্রাকৃতিক শক্তিতে আপনার ত্বক থাকুক সুরক্ষিত ও সুন্দর।</p>
+            <a href="#order" class="btn-green px-10 py-4 font-bold text-lg inline-block">অর্ডার করুন</a>
+            <img src="Neem Oil.png" alt="Neem Oil" class="mx-auto mt-16 w-full max-w-sm">
+        </div>
+    </section>
+
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <img src="Skin Problem.png" alt="Skin Problems" class="w-full">
+            <div>
+                <h2 class="text-4xl font-bold mb-10 text-red-600 leading-tight">আপনি কি এই সমস্যায় ভুগছেন?</h2>
+                <ul class="space-y-6 text-xl">
+                    <li class="flex items-center gap-4"><span class="text-red-600 text-3xl">●</span> শরীরে অসহ্য চুলকানি?</li>
+                    <li class="flex items-center gap-4"><span class="text-red-600 text-3xl">●</span> ফুসকুড়ি ওঠে ও ফুলে যায়?</li>
+                    <li class="flex items-center gap-4"><span class="text-red-600 text-3xl">●</span> চিপা জায়গায় বেশি চুলকানি?</li>
+                    <li class="flex items-center gap-4"><span class="text-red-600 text-3xl">●</span> কোনো ঔষধে কাজ হচ্ছে না?</li>
+                </ul>
+                <div class="solution-box p-8 rounded-2xl border-l-8 border-[#3d7c3d] mt-12">
+                    <h4 class="text-2xl font-semibold text-[#3d7c3d] mb-4">সমাধান নিমতেলে!!</h4>
+                    <p class="text-lg text-gray-600 leading-relaxed">এই তেল মালিশের সাথে সাথে চুলকানো বন্ধ হবে, নিয়মিত ব্যবহারে চুলকানি, খোসপাচড়া / স্ক্যাবিশ দূর হবে ইনশাআল্লাহ।</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="benefits" class="py-20">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-gray-900 italic">আমাদের তেলের বিশেষত্ব</h2>
+    <section id="product" class="py-20 solution-box">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-16 italic text-gray-900">উপকারিতা সমূহ</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white p-10 rounded-3xl card-shadow border-b-4 border-[#4a7c44]">
-                    <div class="text-6xl mb-6">💆‍♂️</div>
-                    <h3 class="font-bold text-xl mb-4">খুশকি ও উকুন নাশক</h3>
-                    <p class="text-gray-500 leading-relaxed">মাথায় নিয়মিত ব্যবহারের ফলে খুশকি ও উকুন চিরতরে দূর হয় এবং চুলের গোড়া মজবুত করে।</p>
+                <div class="bg-white p-10 rounded-2xl shadow-xl">
+                    <img src="https://i.ibb.co/b3M5n19/f6-copy.png" alt="Benefit 1" class="mx-auto mb-8 w-16">
+                    <h3 class="font-bold text-2xl mb-5">জ্বালা ও ব্যাথা দূর করে</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">চুলকানোর পরে ত্বকের জ্বালাপোড়া ও অস্বস্তি দ্রুত প্রশমিত করে।</p>
                 </div>
-                <div class="bg-white p-10 rounded-3xl card-shadow border-b-4 border-[#4a7c44]">
-                    <div class="text-6xl mb-6">🦟</div>
-                    <h3 class="font-bold text-xl mb-4">মশা থেকে সুরক্ষা</h3>
-                    <p class="text-gray-500 leading-relaxed">গায়ে হালকা মাখলে মশা কামড়ায় না। প্রাকৃতিক সুরক্ষা যা ডেঙ্গু প্রতিরোধে অত্যন্ত কার্যকরী।</p>
+                <div class="bg-white p-10 rounded-2xl shadow-xl">
+                    <img src="https://i.ibb.co/hK2F1tF/f5.png" alt="Benefit 2" class="mx-auto mb-8 w-16">
+                    <h3 class="font-bold text-2xl mb-5">রাতে আরামদায়ক ঘুম</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">রাতে শুইলে চুলকানি বৃদ্ধিতে জাদুর মতো উপশম দেয়।</p>
                 </div>
-                <div class="bg-white p-10 rounded-3xl card-shadow border-b-4 border-[#4a7c44]">
-                    <div class="text-6xl mb-6">🩺</div>
-                    <h3 class="font-bold text-xl mb-4">চর্মরোগের নিরাময়</h3>
-                    <p class="text-gray-500 leading-relaxed">দাদ, একজিমা, সোরিয়াসিস বা দীর্ঘদিনের পুরনো চুলকানিতে এটি অবিশ্বাস্য কাজ করে।</p>
+                <div class="bg-white p-10 rounded-2xl shadow-xl">
+                    <img src="https://i.ibb.co/nQzN34j/f3.png" alt="Benefit 3" class="mx-auto mb-8 w-16">
+                    <h3 class="font-bold text-2xl mb-5">দাগ ও ক্ষত দূর করে</h3>
+                    <p class="text-gray-600 leading-relaxed">চুলকানো স্থানের কালো দাগ এবং পুঁজ আসার সমস্যা দূর করে।</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="order" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
                 
-                <div class="md:w-5/12 bg-[#4a7c44] p-10 text-white flex flex-col justify-between">
+                <div class="md:w-5/12 bg-[#3d7c3d] p-12 text-white flex flex-col justify-between">
                     <div>
-                        <h2 class="text-3xl font-bold mb-8">অর্ডার ডিটেইলস</h2>
+                        <h2 class="text-3xl font-bold mb-10 text-white">অর্ডার ডিটেইলস</h2>
                         <div class="space-y-6 mb-10">
                             <div class="text-gray-800">
                                 <label class="block mb-2 text-white opacity-90 text-sm">পণ্যের পরিমাণ নির্বাচন করুন:</label>
-                                <select id="quantity" onchange="calculateTotal()" class="w-full font-bold">
+                                <select id="quantity" onchange="calculateTotal()" class="w-full font-bold bg-white text-gray-900 border border-white">
                                     <option value="1">২০০ মিলি (৫০০ টাকা)</option>
                                     <option value="2">৩০০ মিলি (৭৩০ টাকা)</option>
                                     <option value="3">৪০০ মিলি (৯৫০ টাকা)</option>
@@ -80,68 +122,90 @@
                             </div>
                             <div class="text-gray-800">
                                 <label class="block mb-2 text-white opacity-90 text-sm">কুরিয়ার চার্জ:</label>
-                                <select id="shipping" onchange="calculateTotal()" class="w-full font-bold">
+                                <select id="shipping" onchange="calculateTotal()" class="w-full font-bold bg-white text-gray-900 border border-white">
                                     <option value="60">ঢাকার ভেতরে (৬০ টাকা)</option>
                                     <option value="120">ঢাকার বাইরে (১২০ টাকা)</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div class="bg-white/10 p-8 rounded-3xl border border-white/20 backdrop-blur-sm">
-                            <p class="text-lg opacity-80 mb-2">সর্বমোট মূল্য পরিশোধ করতে হবে</p>
+                        <div class="bg-white/10 p-8 rounded-3xl border border-white/20">
+                            <p class="text-lg opacity-80 mb-2 text-white">সর্বমোট মূল্য পরিশোধ করতে হবে</p>
                             <p class="text-5xl font-bold text-yellow-400"><span id="total_price_bn">৫৬০</span> টাকা</p>
                             <input type="hidden" id="final_price_input" value="৫৬০ টাকা">
                         </div>
                     </div>
-
                     <div class="mt-12 text-center">
-                        <div class="bg-white/20 inline-block p-4 rounded-full mb-4">
-                            <span class="text-2xl font-bold tracking-tighter">RUMA NATURALS</span>
-                        </div>
-                        <p class="text-xs opacity-60">বিশুদ্ধতাই আমাদের পরিচয়</p>
+                        <p class="text-xl font-bold text-white tracking-tighter uppercase">RUMA NATURALS</p>
+                        <p class="text-xs opacity-60 text-white">বিশুদ্ধতাই আমাদের পরিচয়</p>
                     </div>
                 </div>
 
-                <div class="md:w-7/12 p-10 md:p-16">
-                    <h3 class="text-3xl font-bold mb-10 text-gray-800">আপনার তথ্য দিন</h3>
+                <div class="md:w-7/12 p-12 md:p-20">
+                    <h3 class="text-3xl font-bold mb-10 text-gray-900">আপনার তথ্য দিন</h3>
                     <form id="tg-form" class="space-y-6">
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-gray-600">আপনার নাম</label>
-                            <input type="text" id="cust_name" placeholder="যেমন: মো: আরিফ হোসেন" class="w-full" required>
+                            <input type="text" id="cust_name" placeholder="যেমন: মো: আরিফ হোসেন" required>
                         </div>
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-gray-600">মোবাইল নম্বর</label>
-                            <input type="tel" id="cust_phone" placeholder="যেমন: 01XXXXXXXXX" class="w-full" required>
+                            <input type="tel" id="cust_phone" placeholder="যেমন: 01XXXXXXXXX" required>
                         </div>
                         <div>
                             <label class="block text-sm font-semibold mb-2 text-gray-600">পুরো ঠিকানা</label>
-                            <textarea id="cust_address" placeholder="গ্রাম/রোড, থানা এবং জেলার নাম লিখুন" rows="4" class="w-full" required></textarea>
+                            <textarea id="cust_address" placeholder="গ্রাম/রোড, থানা এবং জেলার নাম লিখুন" rows="4" required></textarea>
                         </div>
                         
-                        <button type="submit" id="submit-btn" class="w-full btn-primary py-5 rounded-2xl font-bold text-xl shadow-2xl active:scale-95 transition-all">অর্ডার নিশ্চিত করুন</button>
+                        <button type="submit" id="submit-btn" class="w-full btn-primary active:scale-95 transition-all">অর্ডার নিশ্চিত করুন</button>
                     </form>
-                    <p class="text-center mt-6 text-gray-400 text-sm">নিরাপদ পেমেন্ট: আমরা কোনো অগ্রিম টাকা নেই না।</p>
+                    <p class="text-center mt-6 text-gray-400 text-sm">অগ্রিম পেমেন্টের প্রয়োজন নেই। আমরা ক্যাশ অন ডেলিভারি দেই।</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white py-12 text-center border-t border-gray-100">
-        <p class="text-gray-400 text-sm">© 2026 Ruma Naturals. All rights reserved.</p>
+    <footer class="footer-section py-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-16">
+            <div>
+                <div class="logo font-bold text-2xl text-white mb-6 uppercase">RUMA NATURALS</div>
+                <p class="text-lg text-gray-300 leading-relaxed italic">প্রকৃতির ছোঁয়ায় সুস্থ থাকুন।</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold text-white mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-gray-300">
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms & Condition</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold text-white mb-6">Contact</h4>
+                <ul class="space-y-4 text-gray-300">
+                    <li>📞 আপনার ফোন নম্বর</li>
+                    <li>✉ info@rumanaturals.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 text-center mt-16 text-gray-500 border-t border-gray-700 pt-10">
+            <p>© 2026 Ruma Naturals. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-    // আপনার বোট ডিটেইলস
-    const BOT_TOKEN = '8575434705:AAHtEGHvWGcmhD6AkbshhzTD1wpVwXasksM';
-    const CHAT_ID = '2007567611';
+    // --- গিটহাব এবং টেলিগ্রামের জন্য প্রয়োজনীয় কোড ---
 
-    // সংখ্যা বাংলায় রূপান্তর
+    // ১. আপনার বোট ডিটেইলস এখানে বসান
+    const BOT_TOKEN = 'আপনার_টোকেন_এখানে'; 
+    const CHAT_ID = 'আপনার_আইডি_এখানে';
+
+    // ২. সংখ্যা বাংলায় রূপান্তর
     function toBengali(n) {
         const symbols = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
         return n.toString().split('').map(s => symbols[s] || s).join('');
     }
 
-    // হিসাব করার ফাংশন
+    // ৩. হিসাব করার ফাংশন
     function calculateTotal() {
         const qty = document.getElementById('quantity').value;
         const shipping = parseInt(document.getElementById('shipping').value);
@@ -158,9 +222,9 @@
         document.getElementById('final_price_input').value = totalBN + " টাকা";
     }
 
-    // টেলিগ্রাম সাবমিশন ফাংশন
+    // ৪. টেলিগ্রাম সাবমিশন ফাংশন
     document.getElementById('tg-form').onsubmit = async function(e) {
-        e.preventDefault();
+        e.preventDefault(); // GitHub-এ 405 এরর বন্ধ করবে
         const btn = document.getElementById('submit-btn');
         btn.innerText = "অর্ডার প্রসেস হচ্ছে...";
         btn.disabled = true;
