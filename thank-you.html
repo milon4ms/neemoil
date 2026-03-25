@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অর্ডার সফল হয়েছে! ধন্যবাদ - Ruma Naturals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Hind Siliguri', sans-serif; background-color: #f0f4f0; }
+        .hero-bg { background-color: white; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+        .btn-primary { background-color: #4a7c44; color: white; transition: 0.3s; }
+        .btn-primary:hover { background-color: #3d6638; transform: scale(1.05); }
+        .success-animation { width: 100px; height: 100px; }
+        .checkmark { width: 100px; height: 100px; border-radius: 50%; display: block; stroke-width: 4; stroke: #4a7c44; stroke-miterlimit: 10; box-shadow: inset 0px 0px 0px #4a7c44; animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both; mx-auto; }
+        .checkmark__circle { stroke-dasharray: 166; stroke-dashoffset: 166; stroke-width: 4; stroke-miterlimit: 10; stroke: #4a7c44; fill: none; animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards; }
+        .checkmark__check { transform-origin: 50% 50%; stroke-dasharray: 48; stroke-dashoffset: 48; animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards; }
+        @keyframes stroke { 100% { stroke-dashoffset: 0; } }
+        @keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
+        @keyframes fill { 100% { box-shadow: inset 0px 0px 0px 30px #4a7c44; } }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="hero-bg p-8 md:p-12 text-center max-w-2xl mx-auto border border-green-100">
+        
+        <div class="success-animation mx-auto mb-8">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-[#4a7c44] mb-6">আপনার অর্ডারটি সফল হয়েছে!</h1>
+        
+        <div class="space-y-4 text-gray-700 text-lg leading-relaxed max-w-lg mx-auto">
+            <p>অভিনন্দন! <span class="font-bold">Ruma Naturals</span>-এর ১০০% খাঁটি নিম তেল বেছে নেওয়ার জন্য আপনাকে আন্তরিক ধন্যবাদ।</p>
+            <p>আমাদের একজন প্রতিনিধি খুব শীঘ্রই <span class="text-red-600 font-semibold">০১৭XXXXXXXX</span> নম্বর থেকে আপনাকে ফোন করে আপনার অর্ডারটি কনফার্ম করবেন।</p>
+            <p class="text-sm text-gray-500 italic">দয়া করে ফোনটি রিসিভ করার জন্য প্রস্তুত থাকবেন।</p>
+        </div>
+
+        <div class="mt-12 p-6 bg-green-50 rounded-xl border-2 border-dashed border-green-200 text-left flex flex-col md:flex-row items-center gap-6 shadow-sm">
+            <div class="flex-1">
+                <h3 class="text-xl font-bold text-green-900 mb-2 underline">বিশেষ অফার: শুধুমাত্র আপনার জন্য!</h3>
+                <p class="text-gray-700 text-sm">আপনি যদি এখনই আরও একটি বোতল অর্ডার করেন, তবে পাবেন <span class="font-bold text-red-600">১০০ টাকা ফ্ল্যাট ডিসকাউন্ট</span> এবং সারা বাংলাদেশে <span class="font-bold">ডেলিভারি একদম ফ্রি!</span></p>
+            </div>
+            <a href="https://wa.me/8801XXXXXXXXX?text=I%20want%20to%20add%20one%20more%20bottle%20to%20my%20order" target="_blank" class="bg-yellow-400 text-gray-950 px-6 py-3 rounded-full font-bold transition hover:bg-yellow-500 text-sm shadow">অফারটি নিন (WhatsApp)</a>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-100">
+            <a href="/" class="btn-primary px-10 py-4 rounded-full font-bold text-lg shadow-lg">হোমপেজে ফিরে যান</a>
+        </div>
+        
+        <p class="text-xs text-gray-400 mt-10">Copyright © 2024 Ruma Naturals. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>
