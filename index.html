@@ -138,7 +138,7 @@
                     <h3 class="text-2xl font-bold mb-10 text-gray-900">আপনার তথ্য দিন</h3>
                     <form id="tg-form" class="space-y-6">
                         <input type="text" id="cust_name" placeholder="আপনার নাম" required>
-                        <input type="tel" id="cust_phone" pattern="[0-9]{11}" placeholder="১১ ডিজিটের মোবাইল নম্বর" required>
+                        <input type="text" id="cust_phone" placeholder="১১ ডিজিটের মোবাইল নম্বর" required>
                         <textarea id="cust_address" placeholder="পুরো ঠিকানা (থানা, জেলাসহ)" rows="4" required></textarea>
                         <button type="submit" id="submit-btn" class="w-full bg-[#3d7c3d] text-white py-5 rounded-xl font-bold text-xl shadow-xl hover:scale-95 transition-all">অর্ডার নিশ্চিত করুন</button>
                     </form>
@@ -191,43 +191,68 @@
     </footer>
 
     <script>
+    // ১. বাংলা থেকে ইংরেজি সংখ্যায় রূপান্তরের ফাংশন
+    function convertToEng(str) {
+        const banglaNums = {'০':'0','১':'1','২':'2','৩':'3','৪':'4','৫':'5','৬':'6','৭':'7','৮':'8','৯':'9'};
+        return str.replace(/[০-৯]/g, s => banglaNums[s]);
+    }
+
+    // ২. ইংরেজি থেকে বাংলা সংখ্যায় রূপান্তর (বিল দেখানোর জন্য)
     function toBengali(n) {
         const symbols = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
         return n.toString().split('').map(s => symbols[s] || s).join('');
     }
 
+    // ৩. মোট বিল হিসাব করার ফাংশন
     function calculateTotal() {
         const qty = document.getElementById('quantity').value;
         const shipping = parseInt(document.getElementById('shipping').value);
         let productPrice = (qty == "1") ? 500 : (qty == "2") ? 730 : 950;
-        const totalBN = toBengali(productPrice + shipping);
+        const totalAmount = productPrice + shipping;
+        const totalBN = toBengali(totalAmount);
         document.getElementById('total_price_bn').innerText = totalBN;
         document.getElementById('final_price_input').value = totalBN + " টাকা";
     }
 
+    // ৪. ফর্ম সাবমিট করার সময় কাজ
     document.getElementById('tg-form').onsubmit = async function(e) {
         e.preventDefault();
+        
+        // ফোন নম্বর ধরুন এবং কনভার্ট করুন
+        let rawPhone = document.getElementById('cust_phone').value;
+        let convertedPhone = convertToEng(rawPhone).replace(/\s+/g, ''); // স্পেস থাকলে সরিয়ে দিবে
+
+        // ফোন নম্বর ভ্যালিডেশন
+        if (convertedPhone.length !== 11 || isNaN(convertedPhone)) {
+            alert("অনুগ্রহ করে ১১ ডিজিটের সঠিক মোবাইল নম্বর দিন (বাংলা বা ইংরেজি)।");
+            return;
+        }
+
         const btn = document.getElementById('submit-btn');
         btn.innerText = "অর্ডার প্রসেস হচ্ছে...";
         btn.disabled = true;
 
         const orderData = {
             name: document.getElementById('cust_name').value,
-            phone: document.getElementById('cust_phone').value,
+            phone: convertedPhone, 
             address: document.getElementById('cust_address').value,
             total: document.getElementById('final_price_input').value
         };
 
         const tgMessage = `🆕 নতুন অর্ডার!\n👤 নাম: ${orderData.name}\n📞 ফোন: ${orderData.phone}\n🏠 ঠিকানা: ${orderData.address}\n💰 বিল: ${orderData.total}`;
         
+        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwvqg3jink5vDEhdx_pAlSbTAuyv1gg83WPaGF_artC2PZiVZptZspDc-NNBWnYEJxQUw/exec';
+
         try {
+            // টেলিগ্রামে পাঠানো
             await fetch(`https://api.telegram.org/bot8575434705:AAHtEGHvWGcmhD6AkbshhzTD1wpVwXasksM/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ chat_id: '2007567611', text: tgMessage })
             });
-            // গুগল শিটে ডাটা পাঠানো (যদি লিঙ্ক দেওয়া থাকে)
-            if(GOOGLE_SHEET_URL !== 'https://script.google.com/macros/s/AKfycbwvqg3jink5vDEhdx_pAlSbTAuyv1gg83WPaGF_artC2PZiVZptZspDc-NNBWnYEJxQUw/exec' && GOOGLE_SHEET_URL !== '') {
+
+            // গুগল শিটে পাঠানো
+            if(GOOGLE_SHEET_URL !== '') {
                 fetch(GOOGLE_SHEET_URL, { 
                     method: 'POST', 
                     mode: 'no-cors', 
@@ -239,9 +264,12 @@
         } catch (err) {
             alert("সমস্যা হয়েছে, আবার চেষ্টা করুন।");
             btn.disabled = false;
+            btn.innerText = "অর্ডার নিশ্চিত করুন";
         }
     };
+    
+    // পেজ লোড হলে ক্যালকুলেশন কল করুন
     window.onload = calculateTotal;
-    </script>
+</script>
 </body>
 </html>
