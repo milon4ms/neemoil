@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta name="facebook-domain-verification" content="mgcli29e9sskr1f7y6cou1rkcxvuoo" />
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3774300972716166');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', { content_name: 'Neem Oil' });
+</script>
+<meta name="facebook-domain-verification" content="mgcli29e9sskr1f7y6cou1rkcxvuoo" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nirvik Naturals - চুলকানির যম নিম তেল</title>
@@ -90,7 +103,7 @@
                     <li>ক্ষত, কালোদাগ, রক্তপাত দূর করে</li>
                     <li>ব্যাকটেরিয়া ও ফাঙ্গাস ধ্বংস করে</li>
                     <li>মাথায় মাখলে খুশকি ও উকুন দূর করে</li>
-                    <li>এটি গায়ে মাখলে মশা কামড়ায় না</li>
+                    <li>এটি গায়ে মাখলে মশা কামড়ায় না</li>
                 </ul>
             </div>
             <div class="bg-gradient-to-br from-purple-50 to-white shadow-xl rounded-2xl p-8 border text-purple-700">
@@ -192,7 +205,6 @@
     </footer>
 
     <script>
-    // আপনার নতুন টোকেন এবং চ্যাট আইডি হাইড করা হয়েছে
     const _0x4f21 = ['8227779159', 'AAE5UwIN9RntDtGQGjxWyDBgYSNSImiSPQg', '2007567611'];
     const _tgK = `${_0x4f21[0]}:${_0x4f21[1]}`;
     const _cId = _0x4f21[2];
@@ -232,6 +244,9 @@
         btn.innerText = "অর্ডার প্রসেস হচ্ছে...";
         btn.disabled = true;
 
+        const qtyValue = document.getElementById('quantity').value;
+        let pixelValue = (qtyValue == "1") ? 500 : (qtyValue == "2") ? 730 : 950;
+
         const orderData = {
             name: document.getElementById('cust_name').value,
             phone: convertedPhone,
@@ -244,14 +259,23 @@
         const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwvqg3jink5vDEhdx_pAlSbTAuyv1gg83WPaGF_artC2PZiVZptZspDc-NNBWnYEJxQUw/exec';
 
         try {
-            // টেলিগ্রামে মেসেজ পাঠানো
+            // ১. টেলিগ্রামে মেসেজ পাঠানো
             await fetch(`https://api.telegram.org/bot${_tgK}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ chat_id: _cId, text: tgMessage })
             });
 
-            // গুগল শিটে ডাটা পাঠানো
+            // ২. ফেসবুক পিক্সেল পারচেজ ইভেন্ট ফায়ার করা
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Purchase', {
+                    value: pixelValue,
+                    currency: 'BDT',
+                    content_name: 'Neem Oil'
+                });
+            }
+
+            // ৩. গুগল শিটে ডাটা পাঠানো
             if(GOOGLE_SHEET_URL !== '') {
                 fetch(GOOGLE_SHEET_URL, { 
                     method: 'POST', 
@@ -260,7 +284,11 @@
                 });
             }
 
-            window.location.href = "thank-you.html";
+            // ৪. রিডাইরেক্ট (পিক্সেল ডেটা পাঠানোর জন্য সামান্য দেরি)
+            setTimeout(() => {
+                window.location.href = "thank-you.html";
+            }, 800);
+
         } catch (err) {
             alert("সমস্যা হয়েছে, আবার চেষ্টা করুন।");
             btn.disabled = false;
