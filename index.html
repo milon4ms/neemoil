@@ -66,7 +66,7 @@
     <p class="text-base md:text-lg text-gray-600 mb-8">চুলকানিযুক্ত ও অ্যালার্জি প্রবণ ত্বকের অপ্রতিম প্রাকৃতিক সুরক্ষাকবচ।</p>
     <a href="#order" class="btn-green px-10 py-4 font-bold text-xl shadow-xl inline-block">অর্ডার করুন</a>
 </div>
-                   
+                    
                 <div class="w-full md:w-1/4 order-3 flex justify-center md:justify-start">
                     <img src="abc.jpg" alt="Right Product" class="w-4/5 md:w-full max-w-[320px] h-auto rounded-2xl shadow-lg">
                 </div>
@@ -81,7 +81,7 @@
                 <h2 class="text-4xl font-bold mb-10 text-red-600 border-l-4 border-red-600 pl-6">ত্বকের অস্বস্তি থেকে পান দীর্ঘস্থায়ী মুক্তি</h2>
                 <ul class="space-y-7 text-2xl font-semibold">
                     <li class="flex items-center gap-4"><span class="w-4 h-4 bg-red-500 rounded-full"></span> ত্বকের জেদি চুলকানি ও লালচে ভাব দূর করতে।</li>
-                    <li class="flex items-center gap-4"><span class="w-4 h-4 bg-purple-500 rounded-full"></span> ফুসকুড়ি কিংবা হঠাৎ ফুলে যাওয়া ত্বকের দ্রুত প্রশান্তি।</li>
+                    <li class="flex items-center gap-4"><span class="w-4 h-4 bg-purple-500 rounded-full"></span> ফুসকুড়ি কিংবা হঠাৎ ফুলে যাওয়া ত্বকের দ্রুত প্রশান্তি।</li>
                     <li class="flex items-center gap-4"><span class="w-4 h-4 bg-yellow-400 rounded-full"></span> শরীরের ভাঁজযুক্ত বা স্পর্শকাতর স্থানের বিশেষ সুরক্ষা।</li>
                     <li class="flex items-center gap-4"><span class="w-4 h-4 bg-blue-500 rounded-full"></span> সাধারণ প্রতিকারে যারা আশানুরূপ ফল পাচ্ছেন না।</li>
                     <li class="flex flex-col gap-1 text-green-800 font-bold">
@@ -99,9 +99,9 @@
                 <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">❤️ উপকারিতা (১)</h3>
                 <ul class="space-y-4 list-disc list-inside text-lg font-medium">
                     <li>মালিশের সাথে সাথে চুলকানির অস্বস্তি কমে আসে</li>
-                    <li>নিয়মিত ব্যবহারে খোসপাচড়া দ্রুত কমিয়ে আনে</li>
+                    <li>নিয়মিত ব্যবহারে খোসপাচড়া দ্রুত কমিয়ে আনে</li>
                     <li>এর প্রাকৃতিক অ্যান্টি-সেপটিক জ্বালা ও ব্যাথার বিরুদ্ধে কার্যকরে</li>
-                    <li>ব্ব্রণ ও ফুসকুড়ির সমস্যায় স্কীনে সতেজতা আনে</li>
+                    <li>ব্ব্রণ ও ফুসকুড়ির সমস্যায় স্কীনে সতেজতা আনে</li>
                 </ul>
             </div>
             <div class="bg-gradient-to-br from-green-50 to-white shadow-xl rounded-2xl p-8 border text-green-700">
@@ -119,7 +119,7 @@
                     <li>উপাদানঃ নিম, গার্লিক, ক্যামফার, টারমেরিক</li>
                     <li>১০০% প্রাকৃতিক ও নিরাপদ</li>
                     <li>শুধু বাহ্যিক ব্যবহারের জন্য (মাখতে হবে)</li>
-                    <li>ডলে ডলে মালিশ করুন, খাওয়া যাবে না।</li>
+                    <li>ডলে ডলে মালিশ করুন, খাওয়া যাবে না biographies</li>
                 </ul>
             </div>
         </div>
@@ -148,9 +148,9 @@
                         </div>
                         <div class="bg-white/10 p-8 rounded-3xl border border-white/20 mt-10 text-center">
                             <p class="text-lg opacity-80 mb-1">সর্বমোট মূল্য</p>
-                            <p class="text-6xl font-bold text-yellow-400 mb-2"><span id="total_price_bn">৬২০</span> টাকা</p>
+                            <p class="text-6xl font-bold text-yellow-400 mb-2"><span id="total_price_bn">৬৭০</span> টাকা</p>
                             <p class="text-xs text-white font-medium italic">সারা দেশে ক্যাশ অন ডেলিভারি</p>
-                            <input type="hidden" id="final_price_input" value="৬২০ টাকা">
+                            <input type="hidden" id="final_price_input" value="৬৭০ টাকা">
                         </div>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
     function calculateTotal() {
         const qty = document.getElementById('quantity').value;
         const shipping = parseInt(document.getElementById('shipping').value);
-        let productPrice = (qty == "1") ? 500 : (qty == "2") ? 730 : 950;
+        let productPrice = (qty == "1") ? 550 : (qty == "2") ? 800 : 1050;
         const totalAmount = productPrice + shipping;
         const totalBN = toBengali(totalAmount);
         document.getElementById('total_price_bn').innerText = totalBN;
@@ -248,7 +248,7 @@
         }
 
         const btn = document.getElementById('submit-btn');
-        btn.innerText = "অর্ডার প্রসেস হচ্ছে...";
+        btn.innerText = "অर्डर প্রসেস হচ্ছে...";
         btn.disabled = true;
 
         const qtyValue = document.getElementById('quantity').value;
@@ -266,7 +266,7 @@
         const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwvqg3jink5vDEhdx_pAlSbTAuyv1gg83WPaGF_artC2PZiVZptZspDc-NNBWnYEJxQUw/exec';
 
         try {
-            // ১. ফেসবুক পিক্সেল পারচেজ ইভেন্ট (আগে ফায়ার করা ভালো)
+            // ১. ফেসবুক পিক্সেল পারচেজ ইভেন্ট (আগে ফায়ার করা ভালো)
             if (window.fbq) {
                 fbq('track', 'Purchase', {
                     value: pixelValue,
@@ -299,7 +299,7 @@
         } catch (err) {
             alert("সমস্যা হয়েছে, আবার চেষ্টা করুন।");
             btn.disabled = false;
-            btn.innerText = "অর্ডার নিশ্চিত করুন";
+            btn.innerText = "অर्डर নিশ্চিত করুন";
         }
     };
     window.onload = calculateTotal;
